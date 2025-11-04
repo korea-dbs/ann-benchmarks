@@ -1,0 +1,42 @@
+float:
+  any:
+  - base_args: ['@metric']
+    constructor: LibSQL
+    disabled: false
+    docker_tag: ann-benchmarks-libsql
+    module: ann_benchmarks.algorithms.libsql
+    name: libsql-bruteforce
+    run_groups:
+      base:
+        arg_groups:
+          - use_index: false
+        args: {}
+        query_args: [[]]
+  
+  - base_args: ['@metric']
+    constructor: LibSQL
+    disabled: false
+    docker_tag: ann-benchmarks-libsql
+    module: ann_benchmarks.algorithms.libsql
+    name: libsql-n32
+    run_groups:
+      base:
+        arg_groups:
+          - use_index: true
+            max_neighbors: 32
+        args: {}
+        query_args: [[]]
+  
+  - base_args: ['@metric']
+    constructor: LibSQL
+    disabled: false
+    docker_tag: ann-benchmarks-libsql
+    module: ann_benchmarks.algorithms.libsql
+    name: libsql-n64
+    run_groups:
+      base:
+        arg_groups:
+          - use_index: true
+            max_neighbors: 64
+        args: {}
+        query_args: [[]]
